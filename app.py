@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from PIL import Image
 import streamlit as st
 
 def plot_trajectory():
@@ -52,7 +53,10 @@ def plot_trajectory():
     st.grid(True)
 
     st.tight_layout()
-    st.show()
+
+    # Load and display the GIF
+    gif_image = Image.open('trajectory.gif')
+    st.image(gif_image, use_column_width=True)
 
 @st.cache
 def main():
